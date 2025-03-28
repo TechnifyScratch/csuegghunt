@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Easter Egg Hunt</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data-10-year-range.min.js"></script>
+    <style>
+         .egg-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* or space-around, space-between, etc. */
+            align-items: center; /* Align eggs vertically */
+        }
+
+        .egg {
+            width: 100px; /* Adjust as needed */
+            height: 120px; /* Adjust as needed */
+            margin: 10px; /* Spacing between eggs */
+            cursor: pointer;
+            background-size: cover; /* or contain */
+            background-repeat: no-repeat;
+            border: none; /* Remove default button border */
+            padding: 0; /* Remove default button padding */
+        }
+
+        #login-form {
+            margin-bottom: 20px;
+        }
+
+        #live-feed {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 300px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+            border: 1px solid #ccc;
+            overflow: hidden; /* Hide messages that overflow */
+        }
+
+        .feed-message {
+            margin-bottom: 5px;
+            display: none; /* Initially hidden */
+        }
+
+        #cooldown-timer {
+            position: fixed;
+            bottom: 10px; /* Position at the bottom */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust centering */
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none; /* Initially hidden */
+        }
+
+        #game-timer-container {
+          position: relative; /* To contain the absolute timer */
+        }
+
+        #game-timer {
+            position: absolute; /* Top-right corner */
+            top: 10px;          /* Adjust as needed */
+            right: 10px;         /* Adjust as needed */
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        #final-message {
+            display: none; /* Initially hidden */
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #4CAF50;
+            background-color: #f0fdf4;
+            margin-top: 20px;
+        }
+
+        #logo {
+            width: 350px; /* Adjust to desired width */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Centers the image */
+            margin: 0 auto; /* Centers the image */
+            margin-bottom: 20px; /* Space below the logo */
+        }
+
+        #countdown {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" src="logo.png" alt="Your Logo">
+
+    <div id="countdown"></div>
+
+    <div id="login-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required><br><br>
+
+        <label for="advisoryTeacher">Advisory Teacher:</label>
+        <input type="text" id="advisoryTeacher" name="advisoryTeacher" required><br><br>
+
+        <button id="login-button">Login</button>
+    </div>
+
+    <div id="egg-container" style="display:none;">
+        <!-- Eggs will be dynamically added here -->
+    </div>
+
+    <div id="game-timer-container">
+      <div id="game-timer"></div>
+    </div>
+
+    <div id="cooldown-timer">Cooldown: <span id="timer"></span> seconds</div>
+
+    <div id="live-feed"></div>
+    <div id="final-message"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

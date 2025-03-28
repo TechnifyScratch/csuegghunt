@@ -1,0 +1,13 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* Add more styling here */
+#logo {
+    width: 500px; /* Adjust to desired width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Centers the image */
+    margin: 0 auto; /* Centers the image */
+    margin-bottom: 20px; /* Space below the logo */
+}
