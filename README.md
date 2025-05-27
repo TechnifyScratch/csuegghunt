@@ -1,3 +1,4 @@
+[![Better Stack Badge](https://uptime.betterstack.com/status-badges/v1/monitor/1y1mc.svg)](https://uptime.betterstack.com/?utm_source=status_badge)
 # csuegghunt
 Hey there! This is the public repository for the Christian Students United (CSU) Egg Hunt!
 This project has taken a long time to make, and I hope, therefore will be a successful project for the school.
